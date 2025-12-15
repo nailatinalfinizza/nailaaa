@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Marketing Business</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Start Your Digital Marketing Business</h1>
+    <p>Tingkatkan Brand, Traffic & Penjualan Anda</p>
+</header>
+
+<section class="about">
+    <h2>Tentang Kami</h2>
+    <p>
+        Kami membantu bisnis berkembang melalui strategi digital marketing modern,
+        SEO, social media marketing, dan iklan online.
+    </p>
+</section>
+
+<section class="upload">
+    <h2>Upload Portfolio / Gambar</h2>
+    <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Upload Gambar</button>
+    </form>
+</section>
+
+<section class="gallery">
+    <h2>Gallery</h2>
+    <div class="images">
+        <?php
+        $files = glob("uploads/*");
+        foreach ($files as $file) {
+            echo "<img src='$file'>";
+        }
+        ?>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Digital Marketing Business</p>
+</footer>
+
+</body>
+</html>
